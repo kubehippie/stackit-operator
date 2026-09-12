@@ -1,0 +1,23 @@
+---
+apiVersion: postgres.stackit-operator.webhippie.de/v1alpha1
+kind: PostgresUser
+
+metadata:
+  name: postgresuser-sample
+  namespace: default
+  labels:
+    app.kubernetes.io/name: stackit-operator
+    app.kubernetes.io/managed-by: kustomize
+
+spec:
+  credentialsRef:
+    kind: ServiceAccountCredentials
+    name: serviceaccountcredentials-sample
+
+  instanceName: my-postgres-instance
+  username: my_user
+  roles:
+    - login
+    - createdb
+
+...

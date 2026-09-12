@@ -1,0 +1,9 @@
+---
+resources:
+  - v1alpha1_serviceaccountcredentials.yaml
+  - v1alpha1_clusterserviceaccountcredentials.yaml
+  - postgres_v1alpha1_postgresdatabase.yaml
+  - postgres_v1alpha1_postgresuser.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples
+
+...

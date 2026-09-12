@@ -1,0 +1,77 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgres.stackit-operator.webhippie.de
+  resources:
+  - postgresdatabases
+  - postgresusers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgres.stackit-operator.webhippie.de
+  resources:
+  - postgresdatabases/finalizers
+  - postgresusers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - postgres.stackit-operator.webhippie.de
+  resources:
+  - postgresdatabases/status
+  - postgresusers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - stackit-operator.webhippie.de
+  resources:
+  - clusterserviceaccountcredentials
+  - serviceaccountcredentials
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - stackit-operator.webhippie.de
+  resources:
+  - clusterserviceaccountcredentials/finalizers
+  - serviceaccountcredentials/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - stackit-operator.webhippie.de
+  resources:
+  - clusterserviceaccountcredentials/status
+  - serviceaccountcredentials/status
+  verbs:
+  - get
+  - patch
+  - update

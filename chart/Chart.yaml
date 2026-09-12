@@ -1,0 +1,21 @@
+---
+apiVersion: v2
+type: application
+name: stackit-operator
+description: Manage resources on STACKIT natively
+version: 1.0.0
+appVersion: 1.0.0
+home: https://github.com/kubehippie/stackit-operator
+icon: https://media.ffycdn.net/eu/schwarz-digits/jCwZPCvcoLuUx8FDKe3R.svg
+keywords:
+  - stackit
+  - controller
+  - operator
+maintainers:
+  - email: thomas@webhippie.de
+    name: tboerger
+    url: https://github.com/tboerger
+annotations:
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/operator: "true"
+...
