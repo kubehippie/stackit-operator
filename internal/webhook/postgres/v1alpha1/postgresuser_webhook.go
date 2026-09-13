@@ -20,6 +20,7 @@ import (
 	"context"
 	"fmt"
 	"strings"
+	"time"
 
 	ctrl "sigs.k8s.io/controller-runtime"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
@@ -51,10 +52,14 @@ type PostgresUserCustomDefaulter struct{}
 
 // Default implements webhook.CustomDefaulter so a webhook will be registered for the Kind PostgresUser.
 func (d *PostgresUserCustomDefaulter) Default(_ context.Context, obj *postgresv1alpha1.PostgresUser) error {
-	if obj.Spec.SecretName == nil || strings.TrimSpace(*obj.Spec.SecretName) == "" {
+	if obj.Spec.Secret == nil {
+		obj.Spec.Secret = &postgresv1alpha1.PostgresUserSecretSpec{}
+	}
+
+	if obj.Spec.Secret.Name == nil || strings.TrimSpace(*obj.Spec.Secret.Name) == "" {
 		postgresuserlog.Info("Defaulting for PostgresUser", "name", obj.GetName())
 		name := obj.GetName()
-		obj.Spec.SecretName = &name
+		obj.Spec.Secret.Name = &name
 	}
 
 	return nil
@@ -116,6 +121,66 @@ func (v *PostgresUserCustomValidator) validate(obj *postgresv1alpha1.PostgresUse
 
 	if len(obj.Spec.Roles) == 0 {
 		return fmt.Errorf("spec.roles must set at least one role")
+	}
+
+	if err := validateSecretKeys(obj.Spec.Secret); err != nil {
+		return err
+	}
+
+	if err := validateRotation(obj.Spec.Rotation); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// validateSecretKeys ensures that, if custom secret key names are set, they
+// do not collide with one another.
+func validateSecretKeys(secret *postgresv1alpha1.PostgresUserSecretSpec) error {
+	if secret == nil || secret.Keys == nil {
+		return nil
+	}
+
+	keys := secret.Keys
+	names := map[string]string{
+		"username": "username",
+		"password": "password",
+		"host":     "host",
+		"port":     "port",
+	}
+	if keys.Username != nil && strings.TrimSpace(*keys.Username) != "" {
+		names["username"] = *keys.Username
+	}
+	if keys.Password != nil && strings.TrimSpace(*keys.Password) != "" {
+		names["password"] = *keys.Password
+	}
+	if keys.Host != nil && strings.TrimSpace(*keys.Host) != "" {
+		names["host"] = *keys.Host
+	}
+	if keys.Port != nil && strings.TrimSpace(*keys.Port) != "" {
+		names["port"] = *keys.Port
+	}
+
+	seen := map[string]string{}
+	for field, key := range names {
+		if other, ok := seen[key]; ok {
+			return fmt.Errorf("spec.secret.keys.%s and spec.secret.keys.%s must not use the same key %q", other, field, key)
+		}
+		seen[key] = field
+	}
+
+	return nil
+}
+
+// validateRotation ensures spec.rotation.interval, when set, is a valid Go
+// duration string.
+func validateRotation(rotation *postgresv1alpha1.PostgresUserRotationSpec) error {
+	if rotation == nil || rotation.Interval == nil {
+		return nil
+	}
+
+	if _, err := time.ParseDuration(*rotation.Interval); err != nil {
+		return fmt.Errorf("spec.rotation.interval must be a valid duration: %w", err)
 	}
 
 	return nil

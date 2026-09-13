@@ -48,11 +48,90 @@ type PostgresUserSpec struct {
 	// +kubebuilder:validation:MinItems=1
 	Roles []string `json:"roles"`
 
-	// secretName specifies the name of the Secret this operator creates (or
-	// updates) with the connection details (username, password, host, port,
-	// database) for this user. Defaults to the name of this resource.
+	// secret configures the Secret this operator creates (or updates) with
+	// the connection details (username, password, host, port) for this
+	// user.
 	// +optional
-	SecretName *string `json:"secretName,omitempty"`
+	Secret *PostgresUserSecretSpec `json:"secret,omitempty"`
+
+	// rotation configures automatic and/or triggered rotation of this
+	// user's password, mirroring the `rotate_when_changed` mechanism of the
+	// STACKIT Terraform provider.
+	// +optional
+	Rotation *PostgresUserRotationSpec `json:"rotation,omitempty"`
+}
+
+// PostgresUserSecretKeys allows overriding the individual keys written to
+// the generated connection Secret, e.g. to directly match the environment
+// variable names required by a consuming application. Any key left unset
+// falls back to its default name.
+type PostgresUserSecretKeys struct {
+	// username overrides the key used for the username. Defaults to "username".
+	// +optional
+	Username *string `json:"username,omitempty"`
+
+	// password overrides the key used for the password. Defaults to "password".
+	// +optional
+	Password *string `json:"password,omitempty"`
+
+	// host overrides the key used for the host. Defaults to "host".
+	// +optional
+	Host *string `json:"host,omitempty"`
+
+	// port overrides the key used for the port. Defaults to "port".
+	// +optional
+	Port *string `json:"port,omitempty"`
+}
+
+// PostgresUserSecretSpec configures the Secret this operator writes with
+// the connection details for this user.
+type PostgresUserSecretSpec struct {
+	// name specifies the name of the Secret this operator creates (or
+	// updates) with the connection details for this user. Defaults to the
+	// name of this resource.
+	// +optional
+	Name *string `json:"name,omitempty"`
+
+	// keys allows renaming the individual keys written to the Secret. Any
+	// key left unset uses its default name.
+	// +optional
+	Keys *PostgresUserSecretKeys `json:"keys,omitempty"`
+}
+
+// PostgresUserRotationSpec configures automatic and/or triggered password
+// rotation for a PostgresUser.
+type PostgresUserRotationSpec struct {
+	// trigger is an arbitrary, user-controlled value. Whenever it changes
+	// compared to the last reconciled value (recorded in
+	// status.rotation.trigger), the operator resets the user's password in
+	// STACKIT and rewrites the connection Secret. Use this to force
+	// rotation on demand, e.g. by bumping a timestamp or random value from
+	// a CronJob or GitOps pipeline.
+	// +optional
+	Trigger *string `json:"trigger,omitempty"`
+
+	// interval, when set, causes the operator to automatically reset the
+	// password on this fixed schedule (e.g. "720h" for 30 days), in
+	// addition to any trigger-based rotation. Must be a valid Go duration
+	// string.
+	// +optional
+	// +kubebuilder:validation:Pattern=`^([0-9]+(\.[0-9]+)?(ns|us|µs|ms|s|m|h))+$`
+	Interval *string `json:"interval,omitempty"`
+}
+
+// PostgresUserRotationStatus records the last observed password rotation
+// state for a PostgresUser.
+type PostgresUserRotationStatus struct {
+	// trigger records the last spec.rotation.trigger value that was
+	// reconciled, used to detect subsequent changes.
+	// +optional
+	Trigger *string `json:"trigger,omitempty"`
+
+	// lastRotatedTime records when the password was last rotated by this
+	// operator, either due to a trigger change, an elapsed interval, or
+	// initial user creation.
+	// +optional
+	LastRotatedTime *metav1.Time `json:"lastRotatedTime,omitempty"`
 }
 
 // PostgresUserStatus defines the observed state of PostgresUser.
@@ -75,6 +154,10 @@ type PostgresUserStatus struct {
 	// wrote the connection details to.
 	// +optional
 	SecretName *string `json:"secretName,omitempty"`
+
+	// rotation records the last observed password rotation state.
+	// +optional
+	Rotation *PostgresUserRotationStatus `json:"rotation,omitempty"`
 
 	// conditions represent the current state of the PostgresUser resource.
 	// Each condition has a unique type and reflects the status of a specific aspect of the resource.

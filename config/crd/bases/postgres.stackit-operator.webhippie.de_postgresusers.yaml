@@ -95,12 +95,65 @@ spec:
                   type: string
                 minItems: 1
                 type: array
-              secretName:
+              rotation:
                 description: |-
-                  secretName specifies the name of the Secret this operator creates (or
-                  updates) with the connection details (username, password, host, port,
-                  database) for this user. Defaults to the name of this resource.
-                type: string
+                  rotation configures automatic and/or triggered rotation of this
+                  user's password, mirroring the `rotate_when_changed` mechanism of the
+                  STACKIT Terraform provider.
+                properties:
+                  interval:
+                    description: |-
+                      interval, when set, causes the operator to automatically reset the
+                      password on this fixed schedule (e.g. "720h" for 30 days), in
+                      addition to any trigger-based rotation. Must be a valid Go duration
+                      string.
+                    pattern: ^([0-9]+(\.[0-9]+)?(ns|us|µs|ms|s|m|h))+$
+                    type: string
+                  trigger:
+                    description: |-
+                      trigger is an arbitrary, user-controlled value. Whenever it changes
+                      compared to the last reconciled value (recorded in
+                      status.rotation.trigger), the operator resets the user's password in
+                      STACKIT and rewrites the connection Secret. Use this to force
+                      rotation on demand, e.g. by bumping a timestamp or random value from
+                      a CronJob or GitOps pipeline.
+                    type: string
+                type: object
+              secret:
+                description: |-
+                  secret configures the Secret this operator creates (or updates) with
+                  the connection details (username, password, host, port) for this
+                  user.
+                properties:
+                  keys:
+                    description: |-
+                      keys allows renaming the individual keys written to the Secret. Any
+                      key left unset uses its default name.
+                    properties:
+                      host:
+                        description: host overrides the key used for the host. Defaults
+                          to "host".
+                        type: string
+                      password:
+                        description: password overrides the key used for the password.
+                          Defaults to "password".
+                        type: string
+                      port:
+                        description: port overrides the key used for the port. Defaults
+                          to "port".
+                        type: string
+                      username:
+                        description: username overrides the key used for the username.
+                          Defaults to "username".
+                        type: string
+                    type: object
+                  name:
+                    description: |-
+                      name specifies the name of the Secret this operator creates (or
+                      updates) with the connection details for this user. Defaults to the
+                      name of this resource.
+                    type: string
+                type: object
               username:
                 description: |-
                   username is the login name of the user. This field is immutable
@@ -189,6 +242,23 @@ spec:
                   instanceID is the STACKIT-assigned UUID of the Postgres Flex instance
                   resolved from spec.instanceName.
                 type: string
+              rotation:
+                description: rotation records the last observed password rotation
+                  state.
+                properties:
+                  lastRotatedTime:
+                    description: |-
+                      lastRotatedTime records when the password was last rotated by this
+                      operator, either due to a trigger change, an elapsed interval, or
+                      initial user creation.
+                    format: date-time
+                    type: string
+                  trigger:
+                    description: |-
+                      trigger records the last spec.rotation.trigger value that was
+                      reconciled, used to detect subsequent changes.
+                    type: string
+                type: object
               secretName:
                 description: |-
                   secretName records the name of the Secret this operator most recently

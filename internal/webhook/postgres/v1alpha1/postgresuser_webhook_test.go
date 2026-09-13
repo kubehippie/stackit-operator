@@ -50,17 +50,18 @@ var _ = Describe("PostgresUser Webhook", func() {
 	})
 
 	Context("When creating PostgresUser under Defaulting Webhook", func() {
-		It("Should default secretName to the object name when unset", func() {
+		It("Should default secret.name to the object name when unset", func() {
 			Expect(defaulter.Default(ctx, obj)).To(Succeed())
-			Expect(obj.Spec.SecretName).NotTo(BeNil())
-			Expect(*obj.Spec.SecretName).To(Equal("test-resource"))
+			Expect(obj.Spec.Secret).NotTo(BeNil())
+			Expect(obj.Spec.Secret.Name).NotTo(BeNil())
+			Expect(*obj.Spec.Secret.Name).To(Equal("test-resource"))
 		})
 
-		It("Should not override an explicitly set secretName", func() {
+		It("Should not override an explicitly set secret.name", func() {
 			secretName := "custom-secret"
-			obj.Spec.SecretName = &secretName
+			obj.Spec.Secret = &postgresv1alpha1.PostgresUserSecretSpec{Name: &secretName}
 			Expect(defaulter.Default(ctx, obj)).To(Succeed())
-			Expect(*obj.Spec.SecretName).To(Equal("custom-secret"))
+			Expect(*obj.Spec.Secret.Name).To(Equal("custom-secret"))
 		})
 	})
 
@@ -86,6 +87,46 @@ var _ = Describe("PostgresUser Webhook", func() {
 		})
 
 		It("Should admit creation when all required fields are present", func() {
+			Expect(validator.ValidateCreate(ctx, obj)).Error().NotTo(HaveOccurred())
+		})
+
+		It("Should deny creation when custom secret keys collide", func() {
+			username := "conn"
+			password := "conn"
+			obj.Spec.Secret = &postgresv1alpha1.PostgresUserSecretSpec{
+				Keys: &postgresv1alpha1.PostgresUserSecretKeys{
+					Username: &username,
+					Password: &password,
+				},
+			}
+			Expect(validator.ValidateCreate(ctx, obj)).Error().To(HaveOccurred())
+		})
+
+		It("Should admit creation with distinct custom secret keys", func() {
+			username := "DB_USER"
+			password := "DB_PASSWORD"
+			host := "DB_HOST"
+			port := "DB_PORT"
+			obj.Spec.Secret = &postgresv1alpha1.PostgresUserSecretSpec{
+				Keys: &postgresv1alpha1.PostgresUserSecretKeys{
+					Username: &username,
+					Password: &password,
+					Host:     &host,
+					Port:     &port,
+				},
+			}
+			Expect(validator.ValidateCreate(ctx, obj)).Error().NotTo(HaveOccurred())
+		})
+
+		It("Should deny creation when rotation.interval is not a valid duration", func() {
+			interval := "not-a-duration"
+			obj.Spec.Rotation = &postgresv1alpha1.PostgresUserRotationSpec{Interval: &interval}
+			Expect(validator.ValidateCreate(ctx, obj)).Error().To(HaveOccurred())
+		})
+
+		It("Should admit creation when rotation.interval is a valid duration", func() {
+			interval := "720h"
+			obj.Spec.Rotation = &postgresv1alpha1.PostgresUserRotationSpec{Interval: &interval}
 			Expect(validator.ValidateCreate(ctx, obj)).Error().NotTo(HaveOccurred())
 		})
 
