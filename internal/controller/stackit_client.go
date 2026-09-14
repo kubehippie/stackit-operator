@@ -33,8 +33,13 @@ import (
 // from a ServiceAccountCredentials or ClusterServiceAccountCredentials
 // resource.
 type StackitCredentials struct {
-	// Options are the SDK configuration options (authentication, region,
-	// ...) to pass to any STACKIT service API client constructor.
+	// Options are the SDK authentication configuration options to pass to
+	// any STACKIT service API client constructor. Deliberately excludes the
+	// region: not every STACKIT API accepts a region in its client
+	// configuration (e.g. the global Resource Manager API rejects it
+	// outright), so callers that need a region should append
+	// stackitconfig.WithRegion(creds.Region) themselves when constructing a
+	// region-scoped client.
 	Options []stackitconfig.ConfigurationOption
 
 	// ProjectID is the STACKIT project ID configured on the referenced
@@ -125,7 +130,6 @@ func resolveStackitCredentials(ctx context.Context, c client.Client, projectID s
 	regionVal := ""
 	if region != nil {
 		regionVal = *region
-		opts = append(opts, stackitconfig.WithRegion(regionVal))
 	}
 
 	return &StackitCredentials{Options: opts, ProjectID: projectID, Region: regionVal}, nil
