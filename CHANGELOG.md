@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/kubehippie/stackit-operator/compare/v1.0.1...v1.0.2) (2026-09-14)
+
+### Bugfixes
+
+* define region only for specific client sdks ([93c1cf8](https://github.com/kubehippie/stackit-operator/commit/93c1cf806c9a642f134918ac82ccc3f9f14a416d))
+* resolve typo within chart rbac definitions ([7f38d01](https://github.com/kubehippie/stackit-operator/commit/7f38d01980fc48d05eb295afad52a21234e0e462))
+
 ## [1.0.1](https://github.com/kubehippie/stackit-operator/compare/v1.0.0...v1.0.1) (2026-09-14)
 
 ### Bugfixes
