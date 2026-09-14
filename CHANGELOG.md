@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.5](https://github.com/kubehippie/stackit-operator/compare/v1.0.4...v1.0.5) (2026-09-14)
+
+### Bugfixes
+
+* postgres sdk also do not like the region ([9b65e6c](https://github.com/kubehippie/stackit-operator/commit/9b65e6c213f01b798c33827adaed640458e59559))
+
 ## [1.0.4](https://github.com/kubehippie/stackit-operator/compare/v1.0.3...v1.0.4) (2026-09-14)
 
 ### Bugfixes

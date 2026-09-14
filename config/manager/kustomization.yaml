@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: ghcr.io/kubehippie/stackit-operator
-  newTag: 1.0.4
+  newTag: 1.0.5
