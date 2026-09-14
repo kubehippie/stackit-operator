@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.1](https://github.com/kubehippie/stackit-operator/compare/v1.0.0...v1.0.1) (2026-09-14)
+
+### Bugfixes
+
+* add missing role rules for crds ([82923dc](https://github.com/kubehippie/stackit-operator/commit/82923dcaa085bf0921de645158be712dabaeab48))
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to e2e927e ([#5](https://github.com/kubehippie/stackit-operator/issues/5)) ([f9949e9](https://github.com/kubehippie/stackit-operator/commit/f9949e9e625d196ed73742979f333bfa85dc08fc))
+
+### Dependencies
+
+* **patch:** update module sigs.k8s.io/controller-runtime to v0.25.1 ([#6](https://github.com/kubehippie/stackit-operator/issues/6)) ([0d1cd1a](https://github.com/kubehippie/stackit-operator/commit/0d1cd1a775e08bc7ff189995ec7c8a3d6363c556))
+
 ## 1.0.0 (2026-09-13)
 
 ### Features
