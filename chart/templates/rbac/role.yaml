@@ -33,6 +33,22 @@ rules:
       - update
       - watch
   - apiGroups:
+      - stackit-operator.webhippie.de
+    resources:
+      - clusterserviceaccountcredentials/finalizers
+      - serviceaccountcredentials/finalizers
+    verbs:
+      - update
+  - apiGroups:
+      - stackit-operator.webhippie.de
+    resources:
+      - clusterserviceaccountcredentials/status
+      - serviceaccountcredentials/status
+    verbs:
+      - get
+      - patch
+      - update
+  - apiGroups:
       - postgres.stackit-operator.webhippie.de
     resources:
       - postgresdatabases
@@ -46,12 +62,12 @@ rules:
       - update
       - watch
   - apiGroups:
-      - stackit-operator.webhippie.de
+      - postgres.stackit-operator.webhippie.de
     resources:
-      - clusterserviceaccountcredentials/status
-      - serviceaccountcredentials/status
+      - postgresdatabases/finalizers
+      - postgresusers/finalizers
     verbs:
-      - get
+      - update
   - apiGroups:
       - postgres.stackit-operator.webhippie.de
     resources:
@@ -59,6 +75,8 @@ rules:
       - postgresusers/status
     verbs:
       - get
+      - patch
+      - update
   {{- if .Values.rbac.extraRules }}
   {{- toYaml .Values.rbac.extraRules | nindent 2 }}
   {{- end }}
