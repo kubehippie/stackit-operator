@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.4](https://github.com/kubehippie/stackit-operator/compare/v1.0.3...v1.0.4) (2026-09-14)
+
+### Bugfixes
+
+* allow dashes within postgres database names ([234ba2b](https://github.com/kubehippie/stackit-operator/commit/234ba2b19580a9fbfa176a4998f3bb834dc48eb6))
+
 ## [1.0.3](https://github.com/kubehippie/stackit-operator/compare/v1.0.2...v1.0.3) (2026-09-14)
 
 ### Bugfixes

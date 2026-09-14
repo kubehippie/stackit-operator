@@ -3,8 +3,8 @@ apiVersion: v2
 type: application
 name: stackit-operator
 description: Manage resources on STACKIT natively
-version: 1.0.3
-appVersion: 1.0.3
+version: 1.0.4
+appVersion: 1.0.4
 home: https://github.com/kubehippie/stackit-operator
 icon: https://media.ffycdn.net/eu/schwarz-digits/jCwZPCvcoLuUx8FDKe3R.svg
 keywords:
