@@ -38,10 +38,10 @@ type PostgresDatabaseSpec struct {
 
 	// name is the name of the database in Postgres Flex. Must be 1-63
 	// characters long, start with a lowercase letter or underscore, and
-	// contain only lowercase letters, numbers, or underscores. This field is
-	// immutable after creation.
+	// contain only lowercase letters, numbers, underscores, or dashes. This
+	// field is immutable after creation.
 	// +required
-	// +kubebuilder:validation:Pattern=`^[a-z_][a-z0-9_]*$`
+	// +kubebuilder:validation:Pattern=`^[a-z_][a-z0-9_-]*$`
 	// +kubebuilder:validation:MaxLength=63
 	Name string `json:"name"`
 

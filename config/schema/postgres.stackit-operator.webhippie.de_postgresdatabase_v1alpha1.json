@@ -48,9 +48,9 @@
           "type": "string"
         },
         "name": {
-          "description": "name is the name of the database in Postgres Flex. Must be 1-63\ncharacters long, start with a lowercase letter or underscore, and\ncontain only lowercase letters, numbers, or underscores. This field is\nimmutable after creation.",
+          "description": "name is the name of the database in Postgres Flex. Must be 1-63\ncharacters long, start with a lowercase letter or underscore, and\ncontain only lowercase letters, numbers, underscores, or dashes. This\nfield is immutable after creation.",
           "maxLength": 63,
-          "pattern": "^[a-z_][a-z0-9_]*$",
+          "pattern": "^[a-z_][a-z0-9_-]*$",
           "type": "string"
         },
         "owner": {
