@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.3](https://github.com/kubehippie/stackit-operator/compare/v1.0.2...v1.0.3) (2026-09-14)
+
+### Bugfixes
+
+* stupid me missed more rbac rules ([74195f9](https://github.com/kubehippie/stackit-operator/commit/74195f95c2fe4d8a04536a90675baac16287c976))
+
 ## [1.0.2](https://github.com/kubehippie/stackit-operator/compare/v1.0.1...v1.0.2) (2026-09-14)
 
 ### Bugfixes
