@@ -19,6 +19,46 @@ rules:
       - patch
       - update
       - watch
+  - apiGroups:
+      - stackit-operator.webhippie.de
+    resources:
+      - clusterserviceaccountcredentials
+      - serviceaccountcredentials
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - spostgres.stackit-operator.webhippie.de
+    resources:
+      - postgresdatabases
+      - postgresusers
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - stackit-operator.webhippie.de
+    resources:
+      - clusterserviceaccountcredentials/status
+      - serviceaccountcredentials/status
+    verbs:
+      - get
+  - apiGroups:
+      - postgres.stackit-operator.webhippie.de
+    resources:
+      - postgresdatabases/status
+      - postgresusers/status
+    verbs:
+      - get
   {{- if .Values.rbac.extraRules }}
   {{- toYaml .Values.rbac.extraRules | nindent 2 }}
   {{- end }}
