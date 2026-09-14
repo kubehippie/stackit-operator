@@ -22,7 +22,6 @@ import (
 
 	"github.com/kubehippie/stackit-operator/api/common"
 	"github.com/kubehippie/stackit-operator/internal/controller"
-	stackitconfig "github.com/stackitcloud/stackit-sdk-go/core/config"
 	postgresflex "github.com/stackitcloud/stackit-sdk-go/services/postgresflex/v3api"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
@@ -55,13 +54,12 @@ func NewPostgresFlexSession(ctx context.Context, c client.Client, credentialsRef
 		return nil, fmt.Errorf("region must be set on the referenced credentials to use the Postgres Flex API")
 	}
 
-	pgClient, err := postgresflex.NewAPIClient(
-		append(
-			creds.Options,
-			stackitconfig.WithRegion(creds.Region),
-		)...,
-	)
-
+	// The Postgres Flex v3 API expects the region as a per-call function
+	// parameter (see ResolveInstanceID, InstanceConnectionInfo, etc. below),
+	// not as client configuration. Passing WithRegion here makes the SDK
+	// reject the client with "this API does not support setting a region in
+	// the client configuration".
+	pgClient, err := postgresflex.NewAPIClient(creds.Options...)
 	if err != nil {
 		return nil, fmt.Errorf("failed to build Postgres Flex client: %w", err)
 	}
