@@ -1,6 +1,6 @@
 # stackit-operator
 
-[![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/kubehippie/stackit-operator) [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kubehippie-stackit-operator)](https://artifacthub.io/packages/helm/kubehippie-stackit-operator/stackit-operator)
+[![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/kubehippie/stackit-operator) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ef1c1d1b1eff4bc48b7aae87a0d2a141)](https://app.codacy.com/gh/kubehippie/stackit-operator/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/kubehippie-stackit-operator)](https://artifacthub.io/packages/helm/kubehippie-stackit-operator/stackit-operator)
 
 > [!WARNING]
 > **This project is in early development.** The builtin resources and their APIs
