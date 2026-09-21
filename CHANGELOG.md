@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/kubehippie/stackit-operator/compare/v1.0.5...v1.1.0) (2026-09-21)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1 docker digest to 03fd17c ([#12](https://github.com/kubehippie/stackit-operator/issues/12)) ([773a514](https://github.com/kubehippie/stackit-operator/commit/773a5145f9804017bd6027f5191e87a7f575c688))
+* **deps:** update golang:1.27.1 docker digest to 1cfcdb1 ([#13](https://github.com/kubehippie/stackit-operator/issues/13)) ([9c2c42f](https://github.com/kubehippie/stackit-operator/commit/9c2c42f5f8478928f4014a26448e729410039a34))
+* **deps:** update golang:1.27.1 docker digest to 3680233 ([#14](https://github.com/kubehippie/stackit-operator/issues/14)) ([57d8f11](https://github.com/kubehippie/stackit-operator/commit/57d8f11e286dc047c310e36530553df8af6d0a14))
+
+### Dependencies
+
+* **minor:** update module github.com/onsi/ginkgo/v2 to v2.33.0 ([#8](https://github.com/kubehippie/stackit-operator/issues/8)) ([6ccc894](https://github.com/kubehippie/stackit-operator/commit/6ccc8946c96b33f13fbdf20954499bac0ddaeef4))
+* **patch:** update module github.com/onsi/gomega to v1.43.1 ([#7](https://github.com/kubehippie/stackit-operator/issues/7)) ([3e2ee0a](https://github.com/kubehippie/stackit-operator/commit/3e2ee0aa649f099b0f1c739bd7a8ffd98350955b))
+
 ## [1.0.5](https://github.com/kubehippie/stackit-operator/compare/v1.0.4...v1.0.5) (2026-09-14)
 
 ### Bugfixes
