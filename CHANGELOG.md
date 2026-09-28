@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/kubehippie/stackit-operator/compare/v1.1.0...v1.2.0) (2026-09-28)
+
+### Dependencies
+
+* **minor:** update dependency golangci/golangci-lint to v2.14.0 ([#19](https://github.com/kubehippie/stackit-operator/issues/19)) ([8bf42cc](https://github.com/kubehippie/stackit-operator/commit/8bf42ccc1456148e3bc1465619bdf303ff209076))
+* **minor:** update module github.com/onsi/gomega to v1.44.0 ([#20](https://github.com/kubehippie/stackit-operator/issues/20)) ([8f6c4a8](https://github.com/kubehippie/stackit-operator/commit/8f6c4a8872a1e288a0e85aa43e53b8fb786b6efd))
+* **mise:** update dependency kubectl to v1.37.1 ([#15](https://github.com/kubehippie/stackit-operator/issues/15)) ([a83f381](https://github.com/kubehippie/stackit-operator/commit/a83f3819052a617ab258f30b32ac73e58f2810c3))
+* **patch:** update kubernetes monorepo to v0.37.1 ([#16](https://github.com/kubehippie/stackit-operator/issues/16)) ([8243722](https://github.com/kubehippie/stackit-operator/commit/8243722c6fe611ad309f56ae1f8f95827e84c708))
+* **patch:** update module github.com/stackitcloud/stackit-sdk-go/core to v0.27.1 ([#17](https://github.com/kubehippie/stackit-operator/issues/17)) ([d56988b](https://github.com/kubehippie/stackit-operator/commit/d56988be281b481146528779173bddfabe81b66f))
+
 ## [1.1.0](https://github.com/kubehippie/stackit-operator/compare/v1.0.5...v1.1.0) (2026-09-21)
 
 ### Bugfixes
