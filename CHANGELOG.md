@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.1](https://github.com/kubehippie/stackit-operator/compare/v1.2.0...v1.2.1) (2026-10-05)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1 docker digest to e0174e5 ([#25](https://github.com/kubehippie/stackit-operator/issues/25)) ([34ebe90](https://github.com/kubehippie/stackit-operator/commit/34ebe900d8c5c9d3b3bc76ae80067f5ceda1b1b9))
+
+### Dependencies
+
+* **mise:** update dependency betterleaks to v1.9.0 ([#24](https://github.com/kubehippie/stackit-operator/issues/24)) ([1357d2d](https://github.com/kubehippie/stackit-operator/commit/1357d2d9faa98919c818b622dd9de04ba5ce022a))
+* **mise:** update dependency prek to v0.5.4 ([#21](https://github.com/kubehippie/stackit-operator/issues/21)) ([26bfc33](https://github.com/kubehippie/stackit-operator/commit/26bfc335c5ceac75f8a3959310dc2d54bfc47f92))
+* **mise:** update dependency prek to v0.5.5 ([#30](https://github.com/kubehippie/stackit-operator/issues/30)) ([8a4c7cd](https://github.com/kubehippie/stackit-operator/commit/8a4c7cd5f954aaf90287d7ffb5910a1d8c24b8e9))
+* **mise:** update dependency tilt to v0.37.8 ([#26](https://github.com/kubehippie/stackit-operator/issues/26)) ([b46d54a](https://github.com/kubehippie/stackit-operator/commit/b46d54a964b1c41919cd9eb2dd0444f47d710367))
+* **mise:** update dependency yq to v4.54.1 ([#23](https://github.com/kubehippie/stackit-operator/issues/23)) ([c20b0b4](https://github.com/kubehippie/stackit-operator/commit/c20b0b48d570e368edcb31034c11a9bad6d805b7))
+* **patch:** update dependency kubernetes-sigs/kustomize to v5.8.2 ([#27](https://github.com/kubehippie/stackit-operator/issues/27)) ([bb09292](https://github.com/kubehippie/stackit-operator/commit/bb09292ebac5aa67f91c4c7b0c73ec0d8a2c9f64))
+* **patch:** update module github.com/stackitcloud/stackit-sdk-go/services/resourcemanager to v0.26.1 ([#28](https://github.com/kubehippie/stackit-operator/issues/28)) ([e75479c](https://github.com/kubehippie/stackit-operator/commit/e75479c9a84b5d4233f29f13913eafdfef7c7c03))
+* **patch:** update module sigs.k8s.io/controller-runtime to v0.25.2 ([#29](https://github.com/kubehippie/stackit-operator/issues/29)) ([c9be7dd](https://github.com/kubehippie/stackit-operator/commit/c9be7dd726c5ff448cbca0573eed3beed10c36c0))
+
 ## [1.2.0](https://github.com/kubehippie/stackit-operator/compare/v1.1.0...v1.2.0) (2026-09-28)
 
 ### Dependencies
