@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.2](https://github.com/kubehippie/stackit-operator/compare/v1.2.1...v1.2.2) (2026-10-12)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.1 docker digest to 162be52 ([#32](https://github.com/kubehippie/stackit-operator/issues/32)) ([1949234](https://github.com/kubehippie/stackit-operator/commit/1949234528c9d819da2c5b046c6336207b1a7bcd))
+* **deps:** update golang:1.27.1 docker digest to 1e93e00 ([#31](https://github.com/kubehippie/stackit-operator/issues/31)) ([b48e82e](https://github.com/kubehippie/stackit-operator/commit/b48e82ef6206efd85f7618a35e04e3e4aad6a1d0))
+
+### Dependencies
+
+* **mise:** update dependency go to v1.27.2 ([#34](https://github.com/kubehippie/stackit-operator/issues/34)) ([575f0f7](https://github.com/kubehippie/stackit-operator/commit/575f0f73321fde43872546955285695e8e162f7f))
+* **patch:** update dependency kubernetes-sigs/kustomize to v5.8.3 ([#33](https://github.com/kubehippie/stackit-operator/issues/33)) ([484e74c](https://github.com/kubehippie/stackit-operator/commit/484e74c63deb3fcfa535928278e7316de0d6052c))
+* **patch:** update golang docker tag to v1.27.2 ([#35](https://github.com/kubehippie/stackit-operator/issues/35)) ([0b4fce1](https://github.com/kubehippie/stackit-operator/commit/0b4fce11526608e3904793a7616a9a300cfc916b))
+* **patch:** update module github.com/onsi/ginkgo/v2 to v2.33.1 ([#36](https://github.com/kubehippie/stackit-operator/issues/36)) ([6b1326c](https://github.com/kubehippie/stackit-operator/commit/6b1326cd33373d48e4037e4f21da24d5182922dc))
+
 ## [1.2.1](https://github.com/kubehippie/stackit-operator/compare/v1.2.0...v1.2.1) (2026-10-05)
 
 ### Bugfixes
