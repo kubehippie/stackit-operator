@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/kubehippie/stackit-operator/compare/v1.2.2...v1.3.0) (2026-10-19)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.2 docker digest to 007a316 ([#37](https://github.com/kubehippie/stackit-operator/issues/37)) ([1ff8275](https://github.com/kubehippie/stackit-operator/commit/1ff827595b0aa9f017e8e51e5d299d17f7c41af8))
+* **deps:** update golang:1.27.2 docker digest to 8201530 ([#38](https://github.com/kubehippie/stackit-operator/issues/38)) ([3752c6f](https://github.com/kubehippie/stackit-operator/commit/3752c6f6755366f1a72bcf20d00b49f118726956))
+
+### Dependencies
+
+* **minor:** update dependency golangci/golangci-lint to v2.15.0 ([#43](https://github.com/kubehippie/stackit-operator/issues/43)) ([2222676](https://github.com/kubehippie/stackit-operator/commit/222267621be16ab4d422cbd13931f9c98e66b6dd))
+* **minor:** update dependency kubernetes-sigs/controller-tools to v0.23.0 ([#40](https://github.com/kubehippie/stackit-operator/issues/40)) ([111d068](https://github.com/kubehippie/stackit-operator/commit/111d06839739e21d0ac0cbc0b7997fc1edcbe394))
+* **minor:** update module github.com/stackitcloud/stackit-sdk-go/services/postgresflex to v1.16.0 ([#41](https://github.com/kubehippie/stackit-operator/issues/41)) ([cf7fb28](https://github.com/kubehippie/stackit-operator/commit/cf7fb286f42ac1d3cb43957f03001088a6bc6149))
+* **mise:** update dependency helm to v4.3.1 ([#39](https://github.com/kubehippie/stackit-operator/issues/39)) ([8b6b81c](https://github.com/kubehippie/stackit-operator/commit/8b6b81c8d578019cd811d10c43eb2336fa23e6fa))
+* **mise:** update dependency prek to v0.5.6 ([#44](https://github.com/kubehippie/stackit-operator/issues/44)) ([4a5da21](https://github.com/kubehippie/stackit-operator/commit/4a5da21b4cd8eb7d2569dae89a0779189ad11014))
+
 ## [1.2.2](https://github.com/kubehippie/stackit-operator/compare/v1.2.1...v1.2.2) (2026-10-12)
 
 ### Bugfixes
