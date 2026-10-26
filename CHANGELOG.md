@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.0](https://github.com/kubehippie/stackit-operator/compare/v1.3.0...v1.4.0) (2026-10-26)
+
+### Bugfixes
+
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to 18f4cc2 ([#54](https://github.com/kubehippie/stackit-operator/issues/54)) ([c4379b6](https://github.com/kubehippie/stackit-operator/commit/c4379b678672ccc1e4eacfeeb0831189bd6c008b))
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to 5167571 ([#46](https://github.com/kubehippie/stackit-operator/issues/46)) ([9e41a25](https://github.com/kubehippie/stackit-operator/commit/9e41a2540d5d017ac93ec01729adc770a557606e))
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to d620678 ([#52](https://github.com/kubehippie/stackit-operator/issues/52)) ([e9b6fa8](https://github.com/kubehippie/stackit-operator/commit/e9b6fa8adb4e66e7d8c1c3f5908b2144f87cee23))
+* **deps:** update golang:1.27.3 docker digest to 6928d94 ([#50](https://github.com/kubehippie/stackit-operator/issues/50)) ([2797dae](https://github.com/kubehippie/stackit-operator/commit/2797dae06149d1a00fb04a8234314dfdb4f8e931))
+* **deps:** update golang:1.27.3 docker digest to f20d83a ([#53](https://github.com/kubehippie/stackit-operator/issues/53)) ([e9f26b7](https://github.com/kubehippie/stackit-operator/commit/e9f26b762dc349fd071d12223e911005aeef871e))
+* **deps:** update golang:1.27.3 docker digest to f241642 ([#51](https://github.com/kubehippie/stackit-operator/issues/51)) ([efcaa48](https://github.com/kubehippie/stackit-operator/commit/efcaa48a6851c89c5cdbb7cf5eba29419625a1fa))
+
+### Dependencies
+
+* **minor:** update module github.com/stackitcloud/stackit-sdk-go/services/resourcemanager to v0.27.0 ([1c23d08](https://github.com/kubehippie/stackit-operator/commit/1c23d087ae24191a4467fe5605cec6ce07d8f83f))
+* **mise:** update dependency go to v1.27.3 ([#47](https://github.com/kubehippie/stackit-operator/issues/47)) ([a6266c5](https://github.com/kubehippie/stackit-operator/commit/a6266c5296a9483079f862fb672eb714c84cf0ba))
+* **mise:** update dependency prek to v0.5.7 ([#49](https://github.com/kubehippie/stackit-operator/issues/49)) ([926ceae](https://github.com/kubehippie/stackit-operator/commit/926ceaef8b1bc15b0cb71cd96c13c3196254309a))
+* **patch:** update golang docker tag to v1.27.3 ([#48](https://github.com/kubehippie/stackit-operator/issues/48)) ([9cb782c](https://github.com/kubehippie/stackit-operator/commit/9cb782cba608bc6eeb334060c7956c4744b55515))
+
 ## [1.3.0](https://github.com/kubehippie/stackit-operator/compare/v1.2.2...v1.3.0) (2026-10-19)
 
 ### Bugfixes
