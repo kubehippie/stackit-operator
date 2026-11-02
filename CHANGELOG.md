@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.5.0](https://github.com/kubehippie/stackit-operator/compare/v1.4.0...v1.5.0) (2026-11-02)
+
+### Bugfixes
+
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to 25ac8f0 ([#65](https://github.com/kubehippie/stackit-operator/issues/65)) ([8a3700c](https://github.com/kubehippie/stackit-operator/commit/8a3700ce983c3fbe1e98d92beab895736982ecd1))
+* **deps:** update golang:1.27.3 docker digest to 2669ec9 ([#62](https://github.com/kubehippie/stackit-operator/issues/62)) ([a8d561d](https://github.com/kubehippie/stackit-operator/commit/a8d561d37ea4ae46b7b2f0f2a9a057c61da9d9f4))
+* **deps:** update golang:1.27.3 docker digest to 2920bb1 ([#63](https://github.com/kubehippie/stackit-operator/issues/63)) ([019e0a6](https://github.com/kubehippie/stackit-operator/commit/019e0a65eb9f12326c4e43ea770ac75dc7aa277e))
+* **deps:** update golang:1.27.3 docker digest to 6f1acc8 ([#58](https://github.com/kubehippie/stackit-operator/issues/58)) ([9d6af72](https://github.com/kubehippie/stackit-operator/commit/9d6af723f9d13d20778587a015b92415483ede9e))
+* **deps:** update golang:1.27.3 docker digest to 9048d5e ([#55](https://github.com/kubehippie/stackit-operator/issues/55)) ([5cd079f](https://github.com/kubehippie/stackit-operator/commit/5cd079ff066cc4c76adf1c57354ae56dccda3503))
+* **deps:** update golang:1.27.3 docker digest to 921f611 ([#56](https://github.com/kubehippie/stackit-operator/issues/56)) ([e5c616c](https://github.com/kubehippie/stackit-operator/commit/e5c616cf92fb5811fa62c5983a4e9e45a40fc778))
+* **deps:** update golang:1.27.3 docker digest to b760209 ([#60](https://github.com/kubehippie/stackit-operator/issues/60)) ([70b2ae8](https://github.com/kubehippie/stackit-operator/commit/70b2ae8f12d7de9f93ee6f944b8c9d4c3da44152))
+
+### Dependencies
+
+* **minor:** update module github.com/stackitcloud/stackit-sdk-go/services/resourcemanager to v0.28.0 ([#57](https://github.com/kubehippie/stackit-operator/issues/57)) ([22f190c](https://github.com/kubehippie/stackit-operator/commit/22f190c6cd7ba81121b25711ccaf025701cc3fb2))
+* **mise:** update dependency kubectl to v1.37.2 ([#59](https://github.com/kubehippie/stackit-operator/issues/59)) ([f4ee07f](https://github.com/kubehippie/stackit-operator/commit/f4ee07fc240f410a4264e23889f208aee2456d64))
+* **mise:** update dependency prek to v0.5.9 ([#64](https://github.com/kubehippie/stackit-operator/issues/64)) ([cce47ca](https://github.com/kubehippie/stackit-operator/commit/cce47ca8084f1bf2cde7c9a067199d41ba2642e0))
+* **patch:** update kubernetes monorepo to v0.37.2 ([#61](https://github.com/kubehippie/stackit-operator/issues/61)) ([6c5ae05](https://github.com/kubehippie/stackit-operator/commit/6c5ae05e5ea2e1c794f24986ecb44eb4ece6e953))
+
 ## [1.4.0](https://github.com/kubehippie/stackit-operator/compare/v1.3.0...v1.4.0) (2026-10-26)
 
 ### Bugfixes
