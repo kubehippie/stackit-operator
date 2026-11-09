@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.6.0](https://github.com/kubehippie/stackit-operator/compare/v1.5.0...v1.6.0) (2026-11-09)
+
+### Bugfixes
+
+* **deps:** update golang:1.27.3 docker digest to 0c050fe ([#72](https://github.com/kubehippie/stackit-operator/issues/72)) ([9315506](https://github.com/kubehippie/stackit-operator/commit/9315506e43fd893b5112c1d2dfa73e620d628698))
+* **deps:** update golang:1.27.3 docker digest to a386c44 ([#71](https://github.com/kubehippie/stackit-operator/issues/71)) ([7292117](https://github.com/kubehippie/stackit-operator/commit/72921174860bae420fe8dac6d84e49c59ac25cf4))
+* **deps:** update golang:1.27.3 docker digest to c292963 ([#70](https://github.com/kubehippie/stackit-operator/issues/70)) ([776caca](https://github.com/kubehippie/stackit-operator/commit/776caca2f30cc665a61f92ddf7b19264db85f71f))
+* **deps:** update golang:1.27.3 docker digest to e519d3b ([#73](https://github.com/kubehippie/stackit-operator/issues/73)) ([d90ba66](https://github.com/kubehippie/stackit-operator/commit/d90ba6649e5f3e7340f268acebde7dac1dcd3b20))
+
+### Dependencies
+
+* **minor:** update module github.com/onsi/ginkgo/v2 to v2.34.0 ([#66](https://github.com/kubehippie/stackit-operator/issues/66)) ([145e62e](https://github.com/kubehippie/stackit-operator/commit/145e62e6b004abdd7f586c41b3f48607ced04072))
+* **mise:** update dependency betterleaks to v1.10.0 ([#69](https://github.com/kubehippie/stackit-operator/issues/69)) ([00dd3ae](https://github.com/kubehippie/stackit-operator/commit/00dd3ae8ed565f8571effe4edee35218ed3d99c3))
+* **mise:** update dependency prek to v0.5.10 ([#67](https://github.com/kubehippie/stackit-operator/issues/67)) ([fc41681](https://github.com/kubehippie/stackit-operator/commit/fc4168157f7ee8e4acd3e7b882aedd936b50d702))
+* **mise:** update dependency yq to v4.54.2 ([#74](https://github.com/kubehippie/stackit-operator/issues/74)) ([2f990eb](https://github.com/kubehippie/stackit-operator/commit/2f990eb744706a30db3d401a42835ab2109976ed))
+* **mise:** update dependency yq to v4.54.3 ([#75](https://github.com/kubehippie/stackit-operator/issues/75)) ([306b3f2](https://github.com/kubehippie/stackit-operator/commit/306b3f2573c9d42466fbbe64fababc3873fbfb1f))
+
 ## [1.5.0](https://github.com/kubehippie/stackit-operator/compare/v1.4.0...v1.5.0) (2026-11-02)
 
 ### Bugfixes
