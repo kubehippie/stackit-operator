@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.6.1](https://github.com/kubehippie/stackit-operator/compare/v1.6.0...v1.6.1) (2026-11-16)
+
+### Bugfixes
+
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to aafe993 ([#80](https://github.com/kubehippie/stackit-operator/issues/80)) ([8a43d34](https://github.com/kubehippie/stackit-operator/commit/8a43d340e8157624cc9a275e06d6e7fcf6e67994))
+* **deps:** update golang:1.27.4 docker digest to 5e8afd4 ([#78](https://github.com/kubehippie/stackit-operator/issues/78)) ([9fcc1ed](https://github.com/kubehippie/stackit-operator/commit/9fcc1ed79bef501720ee89bd5735895d3f30b939))
+
+### Dependencies
+
+* **mise:** update dependency betterleaks to v1.10.1 ([#79](https://github.com/kubehippie/stackit-operator/issues/79)) ([f81c5f5](https://github.com/kubehippie/stackit-operator/commit/f81c5f58e5b203d03276950e8ee88895d1e58c9f))
+* **mise:** update dependency go to v1.27.4 ([#76](https://github.com/kubehippie/stackit-operator/issues/76)) ([3d6cd1c](https://github.com/kubehippie/stackit-operator/commit/3d6cd1cea1008779471c68781c32a1632b40ce8e))
+* **mise:** update dependency helm to v4.3.2 ([#81](https://github.com/kubehippie/stackit-operator/issues/81)) ([83481d0](https://github.com/kubehippie/stackit-operator/commit/83481d06444a5717265c0ca5e2b89092398c8d67))
+* **mise:** update dependency tilt to v0.37.9 ([#82](https://github.com/kubehippie/stackit-operator/issues/82)) ([b71c510](https://github.com/kubehippie/stackit-operator/commit/b71c510a01d51db2b824833af138af7f6eba8a8c))
+* **patch:** update golang docker tag to v1.27.4 ([#77](https://github.com/kubehippie/stackit-operator/issues/77)) ([3e9a0c1](https://github.com/kubehippie/stackit-operator/commit/3e9a0c1b97ded91a93065963c8ca31eda55c2119))
+
 ## [1.6.0](https://github.com/kubehippie/stackit-operator/compare/v1.5.0...v1.6.0) (2026-11-09)
 
 ### Bugfixes
