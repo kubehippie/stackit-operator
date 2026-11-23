@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.2](https://github.com/kubehippie/stackit-operator/compare/v1.6.1...v1.6.2) (2026-11-23)
+
+### Bugfixes
+
+* **deps:** update gcr.io/distroless/static:nonroot docker digest to 8ce6dd8 ([#89](https://github.com/kubehippie/stackit-operator/issues/89)) ([a44da03](https://github.com/kubehippie/stackit-operator/commit/a44da03b1866fb635ba5452a966ef1bf0712cb17))
+* **deps:** update golang:1.27.4 docker digest to fe517ac ([#85](https://github.com/kubehippie/stackit-operator/issues/85)) ([cd3d53b](https://github.com/kubehippie/stackit-operator/commit/cd3d53bfff61e7d6df8db6fae110c5c94588ea99))
+
+### Dependencies
+
+* **mise:** update dependency prek to v0.5.11 ([#86](https://github.com/kubehippie/stackit-operator/issues/86)) ([75ca7a7](https://github.com/kubehippie/stackit-operator/commit/75ca7a70d3845a6c47f1706e0538b753cbe6ff5c))
+* **patch:** update module sigs.k8s.io/controller-runtime to v0.25.3 ([#87](https://github.com/kubehippie/stackit-operator/issues/87)) ([359b271](https://github.com/kubehippie/stackit-operator/commit/359b2710184e96dc0d2dfb41ab0f6f745bb6fb69))
+
 ## [1.6.1](https://github.com/kubehippie/stackit-operator/compare/v1.6.0...v1.6.1) (2026-11-16)
 
 ### Bugfixes
